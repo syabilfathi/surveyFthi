@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U MERAJUK LAGI KE?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #ffcccb; /* Pink background color */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: purple; /* Purple text color */
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4; /* Pink button color */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>U MERAJUK LAGI KE?</h1>
+    <div>
+        <button id="yeButton" onmouseover="moveButton()">YE</button>
+        <button onclick="celebrate()">TAK</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            var button = document.getElementById("yeButton");
+            var xOffset = Math.random() * window.innerWidth - button.clientWidth;
+            var yOffset = Math.random() * window.innerHeight - button.clientHeight;
+            button.style.transform = "translate(" + xOffset + "px," + yOffset + "px)";
+        }
+
+        function celebrate() {
+            setInterval(function () {
+                var celebrationText = document.createElement("div");
+                celebrationText.style.color = "purple";
+                celebrationText.style.fontSize = "24px";
+                celebrationText.textContent = "YEAAYY LOPE UU";
+                celebrationText.style.position = "absolute";
+                celebrationText.style.top = Math.random() * window.innerHeight + "px";
+                celebrationText.style.left = Math.random() * window.innerWidth + "px";
+                document.body.appendChild(celebrationText);
+            }, 50); // Create new elements every 50 milliseconds
+        }
+    </script>
+</body>
+</html>
